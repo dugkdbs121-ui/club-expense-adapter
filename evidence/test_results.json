@@ -1,0 +1,1544 @@
+{
+  "executed_at_kst": "2026-11-18T02:08:22+09:00",
+  "python_version": "3.12.14",
+  "common_cases": 14,
+  "total_case_version_runs": 51,
+  "results": [
+    {
+      "case_id": "N1",
+      "case_name": "기존 club 양식 정상",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "N2",
+      "case_name": "기존 event 양식 정상",
+      "version": "기본판",
+      "format": "event",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "B1",
+      "case_name": "금액 하한 0원",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 1,
+          "total": 0,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 1,
+              "total": 0
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 1,
+          "total": 0,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 1,
+              "total": 0
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 1,\n  \"total\": 0,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 1,\n      \"total\": 0\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "B2",
+      "case_name": "금액 상한 10억 원",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 1,
+          "total": 1000000000,
+          "categories": [
+            {
+              "category": "장비",
+              "count": 1,
+              "total": 1000000000
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 1,
+          "total": 1000000000,
+          "categories": [
+            {
+              "category": "장비",
+              "count": 1,
+              "total": 1000000000
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 1,\n  \"total\": 1000000000,\n  \"categories\": [\n    {\n      \"category\": \"장비\",\n      \"count\": 1,\n      \"total\": 1000000000\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "E1",
+      "case_name": "완전히 빈 입력",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "CSV가 비어 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "CSV가 비어 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E2",
+      "case_name": "제목만 있는 빈 자료",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "지출 내역이 없습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "지출 내역이 없습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E3",
+      "case_name": "필수 열 누락",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "필수 열이 없습니다: 금액"
+      },
+      "actual": {
+        "result": null,
+        "error": "필수 열이 없습니다: 금액"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E4",
+      "case_name": "음수 금액",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E5",
+      "case_name": "문자 금액",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E6",
+      "case_name": "존재하지 않는 날짜",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E7",
+      "case_name": "빈 분류",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 분류가 비어 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 분류가 비어 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E8",
+      "case_name": "금액 상한 초과",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E9",
+      "case_name": "중복된 열 이름",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "중복된 열 이름이 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "중복된 열 이름이 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E10",
+      "case_name": "행의 열 개수 불일치",
+      "version": "기본판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 열 개수가 제목 행과 다릅니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 열 개수가 제목 행과 다릅니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "N1",
+      "case_name": "기존 club 양식 정상",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "N2",
+      "case_name": "기존 event 양식 정상",
+      "version": "구조 개선판",
+      "format": "event",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "B1",
+      "case_name": "금액 하한 0원",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 1,
+          "total": 0,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 1,
+              "total": 0
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 1,
+          "total": 0,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 1,
+              "total": 0
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 1,\n  \"total\": 0,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 1,\n      \"total\": 0\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "B2",
+      "case_name": "금액 상한 10억 원",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 1,
+          "total": 1000000000,
+          "categories": [
+            {
+              "category": "장비",
+              "count": 1,
+              "total": 1000000000
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 1,
+          "total": 1000000000,
+          "categories": [
+            {
+              "category": "장비",
+              "count": 1,
+              "total": 1000000000
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 1,\n  \"total\": 1000000000,\n  \"categories\": [\n    {\n      \"category\": \"장비\",\n      \"count\": 1,\n      \"total\": 1000000000\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "E1",
+      "case_name": "완전히 빈 입력",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "CSV가 비어 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "CSV가 비어 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E2",
+      "case_name": "제목만 있는 빈 자료",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "지출 내역이 없습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "지출 내역이 없습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E3",
+      "case_name": "필수 열 누락",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "필수 열이 없습니다: 금액"
+      },
+      "actual": {
+        "result": null,
+        "error": "필수 열이 없습니다: 금액"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E4",
+      "case_name": "음수 금액",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E5",
+      "case_name": "문자 금액",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E6",
+      "case_name": "존재하지 않는 날짜",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E7",
+      "case_name": "빈 분류",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 분류가 비어 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 분류가 비어 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E8",
+      "case_name": "금액 상한 초과",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E9",
+      "case_name": "중복된 열 이름",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "중복된 열 이름이 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "중복된 열 이름이 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E10",
+      "case_name": "행의 열 개수 불일치",
+      "version": "구조 개선판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 열 개수가 제목 행과 다릅니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 열 개수가 제목 행과 다릅니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "N1",
+      "case_name": "기존 club 양식 정상",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "N2",
+      "case_name": "기존 event 양식 정상",
+      "version": "기능 변경판",
+      "format": "event",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "B1",
+      "case_name": "금액 하한 0원",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 1,
+          "total": 0,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 1,
+              "total": 0
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 1,
+          "total": 0,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 1,
+              "total": 0
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 1,\n  \"total\": 0,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 1,\n      \"total\": 0\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "B2",
+      "case_name": "금액 상한 10억 원",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": {
+          "count": 1,
+          "total": 1000000000,
+          "categories": [
+            {
+              "category": "장비",
+              "count": 1,
+              "total": 1000000000
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 1,
+          "total": 1000000000,
+          "categories": [
+            {
+              "category": "장비",
+              "count": 1,
+              "total": 1000000000
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 1,\n  \"total\": 1000000000,\n  \"categories\": [\n    {\n      \"category\": \"장비\",\n      \"count\": 1,\n      \"total\": 1000000000\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "E1",
+      "case_name": "완전히 빈 입력",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "CSV가 비어 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "CSV가 비어 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E2",
+      "case_name": "제목만 있는 빈 자료",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "지출 내역이 없습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "지출 내역이 없습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E3",
+      "case_name": "필수 열 누락",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "필수 열이 없습니다: 금액"
+      },
+      "actual": {
+        "result": null,
+        "error": "필수 열이 없습니다: 금액"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E4",
+      "case_name": "음수 금액",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E5",
+      "case_name": "문자 금액",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E6",
+      "case_name": "존재하지 않는 날짜",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E7",
+      "case_name": "빈 분류",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 분류가 비어 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 분류가 비어 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E8",
+      "case_name": "금액 상한 초과",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 금액은 0~1,000,000,000원의 정수여야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E9",
+      "case_name": "중복된 열 이름",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "중복된 열 이름이 있습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "중복된 열 이름이 있습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "E10",
+      "case_name": "행의 열 개수 불일치",
+      "version": "기능 변경판",
+      "format": "club",
+      "expected": {
+        "result": null,
+        "error": "2행: 열 개수가 제목 행과 다릅니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 열 개수가 제목 행과 다릅니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X1",
+      "case_name": "새 bank 양식 정상",
+      "version": "기본판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "actual": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X2",
+      "case_name": "새 양식의 잘못된 쉼표",
+      "version": "기본판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "actual": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X3",
+      "case_name": "새 양식의 잘못된 날짜",
+      "version": "기본판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "actual": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X1",
+      "case_name": "새 bank 양식 정상",
+      "version": "구조 개선판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "actual": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X2",
+      "case_name": "새 양식의 잘못된 쉼표",
+      "version": "구조 개선판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "actual": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X3",
+      "case_name": "새 양식의 잘못된 날짜",
+      "version": "구조 개선판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "actual": {
+        "result": null,
+        "error": "지원하지 않는 양식입니다: bank"
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X1",
+      "case_name": "새 bank 양식 정상",
+      "version": "기능 변경판",
+      "format": "bank",
+      "expected": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "actual": {
+        "result": {
+          "count": 3,
+          "total": 20000,
+          "categories": [
+            {
+              "category": "간식",
+              "count": 2,
+              "total": 16500
+            },
+            {
+              "category": "문구",
+              "count": 1,
+              "total": 3500
+            }
+          ]
+        },
+        "error": null
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "saved_json_matches_expected": true
+      },
+      "passed": true,
+      "saved_file_text": "{\n  \"count\": 3,\n  \"total\": 20000,\n  \"categories\": [\n    {\n      \"category\": \"간식\",\n      \"count\": 2,\n      \"total\": 16500\n    },\n    {\n      \"category\": \"문구\",\n      \"count\": 1,\n      \"total\": 3500\n    }\n  ]\n}\n"
+    },
+    {
+      "case_id": "X2",
+      "case_name": "새 양식의 잘못된 쉼표",
+      "version": "기능 변경판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "2행: 출금액은 1,000원과 같은 원 단위 금액이어야 합니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 출금액은 1,000원과 같은 원 단위 금액이어야 합니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    },
+    {
+      "case_id": "X3",
+      "case_name": "새 양식의 잘못된 날짜",
+      "version": "기능 변경판",
+      "format": "bank",
+      "expected": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "actual": {
+        "result": null,
+        "error": "2행: 날짜 형식 또는 값이 잘못되었습니다."
+      },
+      "checks": {
+        "expected_matches_actual": true,
+        "input_file_unchanged": true,
+        "previous_output_preserved": true,
+        "no_file_created_on_error": true,
+        "same_error_without_previous_file": true
+      },
+      "passed": true,
+      "saved_file_text": "{\"previous\": \"기존 저장 결과\"}\n"
+    }
+  ],
+  "comparisons": [
+    {
+      "case_id": "N1",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "N2",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "B1",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "B2",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E1",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E2",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E3",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E4",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E5",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E6",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E7",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E8",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E9",
+      "three_versions_identical": true
+    },
+    {
+      "case_id": "E10",
+      "three_versions_identical": true
+    }
+  ],
+  "all_passed": true
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모아 · 동아리 지출 정리</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="모아 처음으로"><span class="brand-mark" aria-hidden="true">m</span>모아<span class="brand-caption">동아리 지출 정리</span></a>
+    <span class="local-label"><span></span>내 컴퓨터에서 실행 중</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">행사 후 정산, 한눈에</p>
+      <h1>흩어진 지출을<br><span>하나의 보고서로.</span></h1>
+      <p class="intro-copy">CSV 파일을 올리면 내용을 검사하고 항목별로 정리합니다.<br>원본은 그대로 두고, 정리된 결과를 새 파일로 저장해요.</p>
+    </section>
+
+    <div class="workspace">
+      <section class="input-panel card" aria-labelledby="input-title">
+        <div class="section-head"><span class="step">01</span><h2 id="input-title">지출 내역 가져오기</h2></div>
+        <form id="analysis-form">
+          <label class="field-label" for="format">CSV 양식</label>
+          <select id="format" name="format">
+            <option value="club">동아리 기록 · 날짜 / 항목 / 금액</option>
+            <option value="event">행사 담당자 · 사용일 / 분류 / 지출액</option>
+            <option value="bank">은행 내역 · 거래일 / 사용처분류 / 출금액</option>
+          </select>
+          <p id="format-hint" class="field-hint">날짜는 2026-11-17, 금액은 1000처럼 적습니다.</p>
+
+          <label class="upload-zone" for="csv-file">
+            <span class="upload-symbol" aria-hidden="true">↑</span>
+            <strong id="file-name">CSV 파일 선택</strong>
+            <span id="file-description">UTF-8 CSV · 최대 1MB</span>
+            <input id="csv-file" type="file" accept=".csv,text/csv" aria-describedby="file-description">
+          </label>
+
+          <div class="sample-block">
+            <p>파일이 없다면 예제로 시작해 보세요.</p>
+            <div class="sample-buttons">
+              <button type="button" data-sample="club">동아리 기록</button>
+              <button type="button" data-sample="event">행사 담당자</button>
+              <button type="button" data-sample="bank">은행 내역</button>
+            </div>
+          </div>
+
+          <details id="preview-details" hidden>
+            <summary>불러온 내용 확인</summary>
+            <pre id="csv-preview"></pre>
+          </details>
+          <button id="analyze-button" class="primary-button" type="submit" disabled>검사하고 정리하기 <span aria-hidden="true">→</span></button>
+          <p class="storage-note">검사를 통과하면 최근 결과 파일이 갱신됩니다.<br>실패하면 기존 결과 파일은 유지됩니다.</p>
+        </form>
+      </section>
+
+      <section class="results-panel" aria-labelledby="result-title">
+        <div class="section-head result-head"><span class="step">02</span><h2 id="result-title">정리 결과</h2><span id="result-status" class="status-badge">파일을 기다리는 중</span></div>
+        <div id="error-box" class="error-box" role="alert" hidden><strong>내용을 확인해 주세요</strong><p id="error-text"></p></div>
+        <div id="live-message" class="visually-hidden" aria-live="polite"></div>
+
+        <div class="metrics">
+          <div class="metric total-metric"><span>전체 지출</span><div><strong id="total-amount">—</strong><span class="unit">원</span></div><small>모든 유효한 지출의 합계</small></div>
+          <div class="metric"><span>지출 건수</span><div><strong id="expense-count">—</strong><span class="unit">건</span></div><small id="category-count">분류별로 묶어 보여드려요</small></div>
+        </div>
+
+        <div class="category-card card">
+          <div class="table-heading"><h3>항목별 지출</h3><span>금액 단위: 원</span></div>
+          <div id="empty-state" class="empty-state"><span class="empty-icon" aria-hidden="true">▤</span><strong>아직 정리된 내역이 없어요.</strong><p>왼쪽에서 파일이나 예제를 선택하고<br>‘검사하고 정리하기’를 눌러 주세요.</p></div>
+          <div id="table-wrapper" hidden>
+            <table><thead><tr><th scope="col">분류</th><th scope="col">건수</th><th scope="col">합계</th></tr></thead><tbody id="category-rows"></tbody><tfoot><tr><th scope="row">전체</th><td id="table-count"></td><td id="table-total"></td></tr></tfoot></table>
+          </div>
+          <div id="download-area" class="download-area" hidden><div><strong>보고서가 저장됐어요.</strong><p>JSON 파일로 결과를 보관할 수 있습니다.</p></div><a class="download-button" href="/download" download="expense_report.json">보고서 내려받기 <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <p class="result-note">분류는 이름순으로 표시됩니다. 0원 지출도 한 건으로 집계합니다.</p>
+      </section>
+    </div>
+
+    <footer><span>모아 · 동아리 행사 지출 도구</span><span>개인정보가 없는 과제용 예제 데이터를 사용합니다.</span></footer>
+  </main>
+</body>
+</html>

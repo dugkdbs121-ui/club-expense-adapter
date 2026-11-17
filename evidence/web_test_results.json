@@ -1,0 +1,47 @@
+{
+  "executed_at_kst": "2026-11-18T02:31:13+09:00",
+  "python_version": "3.12.14",
+  "results": [
+    {
+      "test": "웹 화면 열기",
+      "passed": true
+    },
+    {
+      "test": "실행 전 다운로드 없음",
+      "passed": true
+    },
+    {
+      "test": "club 양식 API 처리",
+      "passed": true
+    },
+    {
+      "test": "event 양식 API 처리",
+      "passed": true
+    },
+    {
+      "test": "bank 양식 API 처리",
+      "passed": true
+    },
+    {
+      "test": "다운로드와 실제 저장 파일 일치",
+      "passed": true
+    },
+    {
+      "test": "잘못된 금액 오류와 이전 파일 보존",
+      "passed": true
+    },
+    {
+      "test": "미지원 양식 거부",
+      "passed": true
+    },
+    {
+      "test": "1MB 초과 CSV 거부",
+      "passed": true
+    },
+    {
+      "test": "허용하지 않은 파일 경로 거부",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}
