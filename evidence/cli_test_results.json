@@ -1,0 +1,31 @@
+{
+  "executed_at_kst": "2026-11-18T13:25:27+09:00",
+  "python_version": "3.12.14",
+  "results": [
+    {
+      "test": "baseline.main 정상 실행",
+      "passed": true
+    },
+    {
+      "test": "baseline.main 동일 경로 거부·원본 보존",
+      "passed": true
+    },
+    {
+      "test": "refactored.service 정상 실행",
+      "passed": true
+    },
+    {
+      "test": "refactored.service 동일 경로 거부·원본 보존",
+      "passed": true
+    },
+    {
+      "test": "extended.service 정상 실행",
+      "passed": true
+    },
+    {
+      "test": "extended.service 동일 경로 거부·원본 보존",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

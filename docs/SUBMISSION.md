@@ -8,10 +8,9 @@
 - 강의 사이트 과제2의 제출·평가에서 평가가 끝난 이력을 최종 제출로 선택하고 LMS 과제2에 최종본을 업로드한다.
 - 마감: 한국 시간 2026년 12월 1일 00:00. 11월 30일까지 제출 절차를 마친다.
 
-## GitHub가 아직 연결되지 않았다면
+## GitHub와 제출본을 맞추기
 
-1. 본인 계정으로 GitHub에 로그인하고 `club-expense-adapter` 등 새 저장소를 만든다.
-2. 이 폴더의 `.py`, `static`, `examples`, `tests`, `evidence`, `docs`, README를 올린다. `outputs`, `__pycache__`, 실제 개인정보가 담긴 CSV는 올리지 않는다.
-3. 교수·조교가 확인할 수 있는 접근 권한을 설정한다. 공개 여부는 본인이 선택한다.
-4. 실제 저장소 URL을 README의 GitHub 항목에 적고, 변경된 README가 들어가도록 ZIP도 다시 만든다.
+공개 소스: https://github.com/dugkdbs121-ui/club-expense-adapter
+
+코드를 직접 수정했다면 검사 후 GitHub와 소스 ZIP에도 같은 변경을 반영한다. 보고서의 예상·실제 결과가 달라지는지도 확인한다. `outputs`, `__pycache__`, 실제 개인정보가 담긴 CSV와 학번이 들어간 보고서는 공개 저장소에 올리지 않는다.
 

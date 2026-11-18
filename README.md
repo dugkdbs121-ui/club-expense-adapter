@@ -4,7 +4,7 @@
 
 ## GitHub 저장소
 
-현재 로컬 완성 및 검사 후 업로드 준비 중입니다. 원격 저장소의 실제 게시를 확인한 뒤 이 문장을 저장소 링크로 교체합니다. 링크만으로 소스 ZIP과 PDF 제출을 대신하지 않습니다.
+[dugkdbs121-ui/club-expense-adapter](https://github.com/dugkdbs121-ui/club-expense-adapter)에 소스코드를 공개했습니다. 링크만으로 소스 ZIP과 PDF 제출을 대신하지 않습니다.
 
 ## 먼저 실행하기
 
@@ -16,6 +16,7 @@
 ```text
 python check_all.py
 python check_web.py
+python check_cli.py
 ```
 
 5. 아래 명령으로 웹 화면을 시작합니다.
@@ -37,6 +38,24 @@ python web_app.py
 5. 잘못된 입력이면 오류를 보여주고 기존 성공 결과 파일은 유지합니다. 성공할 때마다 최근 결과 파일을 교체하며 여러 작업의 이력을 누적하지 않습니다.
 
 업로드는 1MB 이하로 제한합니다. 날짜·분류·금액을 검사하고, 금액은 **건별 0~1,000,000,000원 정수**만 허용합니다. 0원은 무료 제공 항목을 기록하는 경우를 표현합니다. 제목만 있는 파일, 빈 분류, 잘못된 날짜, 음수·소수·문자 금액은 거부합니다. 입력 원본은 수정하지 않습니다.
+
+## 터미널에서 직접 실행하기
+
+같은 club 입력을 세 버전으로 처리하려면 프로젝트 폴더에서 아래 명령을 각각 실행합니다. 결과는 화면과 지정한 JSON 파일에 나옵니다.
+
+```text
+python -m baseline.main examples/club_normal.csv --format club --output outputs/baseline_report.json
+python -m refactored.service examples/club_normal.csv --format club --output outputs/refactored_report.json
+python -m extended.service examples/club_normal.csv --format club --output outputs/extended_report.json
+```
+
+추가한 bank 양식은 최종판으로 실행합니다.
+
+```text
+python -m extended.service examples/bank_normal.csv --format bank --output outputs/bank_report.json
+```
+
+본인 파일을 사용하려면 입력 경로와 `--format`을 바꿉니다. 경로에 공백이 있으면 큰따옴표로 감쌉니다. 원본 보호를 위해 입력 경로와 `--output` 경로가 같으면 오류로 거부합니다. 기존 결과 JSON은 다음 성공 실행 때 교체됩니다.
 
 ## CSV 양식
 
@@ -70,6 +89,7 @@ examples/       정상·경계·오류 CSV
 tests/          예상과 실제 결과를 비교하는 검사
 check_all.py    전체 검사와 결과 기록
 check_web.py    실제 HTTP 요청·다운로드·오류 검사
+check_cli.py    세 버전 명령행 실행·원본 경로 보호 검사
 web_app.py      로컬 웹 요청을 최종 Python 계산에 연결
 static/         HTML·CSS·JavaScript 화면
 evidence/       자동 검사 결과와 웹 동작 근거

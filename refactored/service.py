@@ -38,6 +38,8 @@ def main():
     parser.add_argument("--output", default="outputs/refactored_report.json")
     args = parser.parse_args()
     try:
+        if Path(args.input).resolve() == Path(args.output).resolve():
+            raise ValueError("입력 파일과 결과 저장 경로는 달라야 합니다.")
         text = Path(args.input).read_text(encoding="utf-8-sig")
         report = run_text(text, args.format, args.output)
     except (ValueError, OSError) as error:
